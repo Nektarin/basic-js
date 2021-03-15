@@ -6,7 +6,7 @@ module.exports = function getSeason(date) {
   if (date == null) {
     return 'Unable to determine the time of year!';
   }
-  if (!(date instanceof Date)) {
+  if (!(date instanceof Date) || isNaN(date.getTime())) {
     throw new Error();
   }
   let season = '0';
